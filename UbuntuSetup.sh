@@ -1,22 +1,24 @@
 #!/bin/sh
 echo "Running ubuntuSetup"
 
-echo "Updateing Ubuntu..."
-sudo apt update &>/dev/null && echo "Complete" || echo "Error"
-sudo apt upgrade -y &>/dev/null && echo "Complete" || echo "Error"
+echo -e "Updateing...\c"
+sudo apt update 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 
-echo "Configuring Aliases..."
+echo -e "Upgrading...\c"
+sudo apt upgrade -y 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
+
+echo -e "Configuring Aliases...\c"
 mv .bash_aliases ~
 echo "Complete"
 
 aptinstall(){
-  echo "Installing $1..."
-  sudo apt install -y $2 &>/dev/null && echo "Complete" || echo "Error"
+  echo -e "Installing $1...\c"
+  sudo apt install -y $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 }
 
 snapinstall(){
-  echo "Installing $1..."
-  sudo snap install $2 &>/dev/null && echo "Complete" || echo "Error"
+  echo -e "Installing $1...\c"
+  sudo snap install $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 }
 
 aptinstall Vim vim
@@ -36,4 +38,4 @@ snapinstall Postman postman
 snapinstall Spotify spotify
 snapinstall 'VLC Player' vlc
 
-read -s -n 1 -p "Ubuntu setup complete"
+read -s -n 1 -p "ubuntuSetup complete"
