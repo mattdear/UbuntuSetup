@@ -1,19 +1,22 @@
 #!/bin/sh
-echo "Begining Ubuntu 20.04 setup"
-echo "Installing updates..."
+echo "Running ubuntuSetup"
+
+echo "Updateing Ubuntu..."
 sudo apt-get update && sudo apt-get upgrade -y
-echo "Setting up aliases..."
+echo "Complete"
+
+echo "Configuring Aliases..."
 mv .bash_aliases ~
 echo "Complete"
 
 aptinstall(){
   echo "Installing $1..."
-  sudo apt install -y $2 &>/dev/null && echo "Installed $1" || echo "Error installing $1"
+  sudo apt install -y $2 &>/dev/null && echo "Complete" || echo "Error"
 }
 
 snapinstall(){
   echo "Installing $1..."
-  sudo snap install $2
+  sudo snap install $2 &>/dev/null && echo "Complete" || echo "Error"
 }
 
 aptinstall Vim vim
@@ -33,7 +36,4 @@ snapinstall Postman postman
 snapinstall Spotify spotify
 snapinstall 'VLC Player' vlc
 
-echo "Final update check..."
-sudo apt-get install && sudo apt-get update -y
-sudo snap refresh
 read -s -n 1 -p "Ubuntu setup complete"
