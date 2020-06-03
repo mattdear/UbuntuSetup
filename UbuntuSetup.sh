@@ -2,8 +2,8 @@
 echo "Running ubuntuSetup"
 
 echo "Updateing Ubuntu..."
-sudo apt-get update && sudo apt-get upgrade -y
-echo "Complete"
+sudo apt update &>/dev/null && echo "Complete" || echo "Error"
+sudo apt upgrade -y &>/dev/null && echo "Complete" || echo "Error"
 
 echo "Configuring Aliases..."
 mv .bash_aliases ~
