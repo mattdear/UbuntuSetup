@@ -17,7 +17,7 @@ echo -e "Upgrading... \c"
 apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 echo -e "Configuring Aliases... \c"
-mv .bash_aliases ~
+mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
 echo "Complete"
 
