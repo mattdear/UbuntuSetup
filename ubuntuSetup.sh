@@ -2,10 +2,10 @@
 echo "Running ubuntuSetup"
 
 echo -e "Updating... \c"
-sudo apt update 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
+sudo apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 echo -e "Upgrading... \c"
-sudo apt upgrade -y 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
+sudo apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 echo -e "Configuring Aliases... \c"
 mv .bash_aliases ~
@@ -13,12 +13,12 @@ echo "Complete"
 
 aptinstall(){
   echo -e "Installing $1... \c"
-  sudo apt install -y $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
+  sudo apt install -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
 
 snapinstall(){
   echo -e "Installing $1... \c"
-  sudo snap install $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
+  sudo snap install $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error"
 }
 
 aptinstall Vim vim
