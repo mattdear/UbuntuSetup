@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "Running ubuntuSetup"
 
-echo -e "Updateing... \c"
+echo -e "Updating... \c"
 sudo apt update 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 
 echo -e "Upgrading... \c"
