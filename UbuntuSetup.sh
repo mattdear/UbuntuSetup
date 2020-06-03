@@ -1,23 +1,23 @@
 #!/bin/sh
 echo "Running ubuntuSetup"
 
-echo -e "Updateing...\c"
+echo -e "Updateing... \c"
 sudo apt update 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 
-echo -e "Upgrading...\c"
+echo -e "Upgrading... \c"
 sudo apt upgrade -y 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 
-echo -e "Configuring Aliases...\c"
+echo -e "Configuring Aliases... \c"
 mv .bash_aliases ~
 echo "Complete"
 
 aptinstall(){
-  echo -e "Installing $1...\c"
+  echo -e "Installing $1... \c"
   sudo apt install -y $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 }
 
 snapinstall(){
-  echo -e "Installing $1...\c"
+  echo -e "Installing $1... \c"
   sudo snap install $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error\n"
 }
 
@@ -38,4 +38,4 @@ snapinstall Postman postman
 snapinstall Spotify spotify
 snapinstall 'VLC Player' vlc
 
-read -s -n 1 -p "ubuntuSetup complete"
+echo "ubuntuSetup complete"
