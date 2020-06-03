@@ -47,4 +47,4 @@ snapinstall Postman postman
 snapinstall Spotify spotify
 snapinstall 'VLC Player' vlc
 
-echo "ubuntuSetup complete"
+echo "UbuntuSetup complete"
