@@ -4,10 +4,11 @@ echo "Installing updates..."
 sudo apt-get update && sudo apt-get upgrade -y
 echo "Setting up aliases..."
 mv .bash_aliases ~
+echo "Complete"
 echo "Installing Vim..."
-sudo apt install vim
+sudo apt install -qq vim -y 
 echo "Installing Java JDK & JRE"
-sudo apt install openjdk-8-jre-headless
+sudo apt install openjdk-8-jre-headless -y
 echo "Installing Atom..."
 sudo snap install atom --classic
 echo "Installing Chromium..."
@@ -21,13 +22,13 @@ sudo snap install drawio
 echo "Installing Eclipse..."
 sudo snap install eclipse --classic
 echo "Installing Gnome Tweaks..."
-sudo apt-get install gnome-tweak-tool
+sudo apt-get install gnome-tweak-tool -y
 echo "Installing Libre Office..."
 sudo snap install libreoffice
 echo "Installing Postman..."
 sudo snap install postman
 echo "Installing Rhythmbox..."
-sudo apt install rhythmbox
+sudo apt install rhythmbox -y
 echo "Installing Spotify..."
 sudo snap install spotify
 echo "Installing VLC Player..."
@@ -37,3 +38,4 @@ sudo apt-get install && sudo apt-get update -y
 sudo snap refresh
 echo "Setup finished!"
 read -s -n 1 -p "Press [Enter] to reboot..."
+systemctl reboot
