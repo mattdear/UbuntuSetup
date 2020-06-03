@@ -8,7 +8,7 @@ user=$SUDO_USER
 [ -z $user ] && read -p 'What user is running this script? ' user
 home=/home/$user
 
-echo "Running ubuntuSetup"
+echo "Running UbuntuSetup"
 
 echo -e "Updating... \c"
 apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
@@ -47,4 +47,4 @@ snapinstall Postman postman
 snapinstall Spotify spotify
 snapinstall 'VLC Player' vlc
 
-echo "UbuntuSetup complete"
+echo "UbuntuSetup Complete"
