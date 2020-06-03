@@ -1,24 +1,34 @@
 #!/bin/sh
+
+# Ensure user is running with superuser privileges
+[ $(id -u) != 0 ] && echo 'This script must be run with superuser privileges.' && exit 0
+
+# Sets variables
+user=$SUDO_USER
+[ -z $user ] && read -p 'What user is running this script? ' user
+home=/home/$user
+
 echo "Running ubuntuSetup"
 
 echo -e "Updating... \c"
-sudo apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
+apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 echo -e "Upgrading... \c"
-sudo apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
+apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 echo -e "Configuring Aliases... \c"
 mv .bash_aliases ~
+chown $user:$user $home/.bash_aliases
 echo "Complete"
 
 aptinstall(){
   echo -e "Installing $1... \c"
-  sudo apt install -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
+  apt install -y $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
 
 snapinstall(){
   echo -e "Installing $1... \c"
-  sudo snap install $2 1>/dev/null && echo -e "Complete\n" || echo -e "Error"
+  snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
 }
 
 aptinstall Vim vim
@@ -32,7 +42,6 @@ snapinstall 'Deja Dup Backup Tool' 'deja-dup --classic'
 snapinstall Discord discord
 snapinstall 'Draw IO' drawio
 snapinstall 'Eclipse' 'eclipse --classic'
-snapinstall 'Gnome Tweaks' gnome-tweak-tool
 snapinstall 'Libre Office' libreoffice
 snapinstall Postman postman
 snapinstall Spotify spotify
