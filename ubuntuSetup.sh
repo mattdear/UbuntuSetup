@@ -35,6 +35,7 @@ aptinstall Vim vim
 aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks' gnome-tweak-tool
 aptinstall Rhythmbox rhythmbox
+aptinstall Maven maven
 
 snapinstall Atom 'atom --classic'
 snapinstall Chromium chromium
