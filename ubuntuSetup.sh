@@ -38,7 +38,6 @@ aptinstall Rhythmbox rhythmbox
 aptinstall Maven maven
 
 snapinstall Atom 'atom --classic'
-snapinstall Chromium chromium
 snapinstall Discord discord
 snapinstall 'Draw IO' drawio
 snapinstall 'Eclipse' 'eclipse --classic'
