@@ -36,6 +36,7 @@ aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks' gnome-tweak-tool
 aptinstall Rhythmbox rhythmbox
 aptinstall Maven maven
+aptinstall GParted gparted
 
 snapinstall Atom 'atom --classic'
 snapinstall Discord discord
