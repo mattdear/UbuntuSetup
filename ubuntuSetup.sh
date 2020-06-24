@@ -40,7 +40,7 @@ aptinstall Maven maven
 snapinstall Atom 'atom --classic'
 snapinstall Discord discord
 snapinstall 'Draw IO' drawio
-snapinstall 'Eclipse' 'eclipse --classic'
+snapinstall 'Netbeans' 'netbeans --classic'
 snapinstall 'Libre Office' libreoffice
 snapinstall Postman postman
 snapinstall Spotify spotify
