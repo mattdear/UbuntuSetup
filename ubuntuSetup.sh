@@ -36,6 +36,7 @@ aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks' gnome-tweak-tool
 aptinstall Rhythmbox rhythmbox
 aptinstall Maven maven
+aptinstall 'Hunspell GB' hunspell-en-gb
 
 snapinstall Atom 'atom --classic'
 snapinstall Discord discord
@@ -45,5 +46,9 @@ snapinstall 'Libre Office' libreoffice
 snapinstall Postman postman
 snapinstall Spotify spotify
 snapinstall 'VLC Player' vlc
+
+# Atom Snap install fix - https://stackoverflow.com/questions/62681150/atom-opens-a-new-file-called-atom-disable-shelling-out-for-environment-false
+
+sudo sed -i 's/Exec=env BAMF_DESKTOP_FILE_HINT=\/var\/lib\/snapd\/desktop\/applications\/atom_atom.desktop \/snap\/bin\/atom ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false \/usr\/bin\/atom %F/Exec=env BAMF_DESKTOP_FILE_HINT=\/var\/lib\/snapd\/desktop\/applications\/atom_atom.desktop ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false \/snap\/bin\/atom %F/' /var/lib/snapd/desktop/applications/atom_atom.desktop
 
 echo "UbuntuSetup Complete"
