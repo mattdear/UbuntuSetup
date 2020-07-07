@@ -8,14 +8,28 @@ user=$SUDO_USER
 [ -z $user ] && read -p 'What user is running this script? ' user
 home=/home/$user
 
+# Script start
 echo "Running UbuntuSetup"
 
+# Setting up Atom installer
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+sudo apt-get update
+
+#Setting up Spotify installer
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update
+
+# Update start
 echo -e "Updating... \c"
 apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
+# Upgrade start
 echo -e "Upgrading... \c"
 apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
+# Configure aliases
 echo -e "Configuring Aliases... \c"
 mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
@@ -31,24 +45,24 @@ snapinstall(){
   snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
 }
 
+# Apt installs
 aptinstall Vim vim
 aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks' gnome-tweak-tool
-aptinstall Rhythmbox rhythmbox
 aptinstall Maven maven
 aptinstall 'Hunspell GB' hunspell-en-gb
+aptinstall Atom Atom
+aptinstall Spotify spotify-client
 
-snapinstall Atom 'atom --classic'
-snapinstall Discord discord
-snapinstall 'Draw IO' drawio
-snapinstall 'Netbeans' 'netbeans --classic'
-snapinstall 'Libre Office' libreoffice
+# Snap installs
 snapinstall Postman postman
-snapinstall Spotify spotify
-snapinstall 'VLC Player' vlc
 
-# Atom Snap install fix - https://stackoverflow.com/questions/62681150/atom-opens-a-new-file-called-atom-disable-shelling-out-for-environment-false
+# Manual installs
+echo "Manual installs"
+read -s -n 1 -p "Discord press [Enter] once complete..."
+read -s -n 1 -p "Draw IO press [Enter] once complete..."
+read -s -n 1 -p "Libre Office press [Enter] once complete..."
+read -s -n 1 -p "Netbeans press [Enter] once complete..."
 
-sudo sed -i 's/Exec=env BAMF_DESKTOP_FILE_HINT=\/var\/lib\/snapd\/desktop\/applications\/atom_atom.desktop \/snap\/bin\/atom ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false \/usr\/bin\/atom %F/Exec=env BAMF_DESKTOP_FILE_HINT=\/var\/lib\/snapd\/desktop\/applications\/atom_atom.desktop ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false \/snap\/bin\/atom %F/' /var/lib/snapd/desktop/applications/atom_atom.desktop
-
+# Script end
 echo "UbuntuSetup Complete"
