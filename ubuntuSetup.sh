@@ -53,6 +53,7 @@ aptinstall Maven maven
 aptinstall 'Hunspell GB' hunspell-en-gb
 aptinstall Atom Atom
 aptinstall Spotify spotify-client
+aptinstall Boxes gnome-boxes
 
 # Snap installs
 snapinstall Postman postman
