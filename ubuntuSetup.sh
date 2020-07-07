@@ -57,11 +57,11 @@ aptinstall Boxes gnome-boxes
 
 # Snap installs
 snapinstall Postman postman
+snapinstall DrawIO drawio
 
 # Manual installs
 echo "Manual installs"
 read -s -n 1 -p "Discord press [Enter] once complete..."
-read -s -n 1 -p "Draw IO press [Enter] once complete..."
 read -s -n 1 -p "Libre Office press [Enter] once complete..."
 read -s -n 1 -p "Netbeans press [Enter] once complete..."
 
