@@ -16,7 +16,7 @@ wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 sudo apt-get update
 
-#Setting up Spotify installer
+# Setting up Spotify installer
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update
@@ -45,6 +45,15 @@ snapinstall(){
   snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
 }
 
+# Machine type specific installs
+if [ ! $(ls /sys/class/power_supply/*) ] ; then
+  # Desktop	
+  aptinstall Boxes gnome-boxes
+else	
+  # Laptop
+  snapinstall Deja Dup 'deja-dup --classic'
+fi
+
 # Apt installs
 aptinstall Vim vim
 aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
@@ -53,7 +62,6 @@ aptinstall Maven maven
 aptinstall 'Hunspell GB' hunspell-en-gb
 aptinstall Atom Atom
 aptinstall Spotify spotify-client
-aptinstall Boxes gnome-boxes
 
 # Snap installs
 snapinstall Postman postman
