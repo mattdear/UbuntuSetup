@@ -45,13 +45,14 @@ snapinstall(){
   snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
 }
 
-# Machine type specific installs
-if [ ! $(ls /sys/class/power_supply/*) ] ; then
-  # Desktop	
-  aptinstall Boxes gnome-boxes
-else	
-  # Laptop
+if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
+  # LAPTOP
+
   snapinstall Deja Dup 'deja-dup --classic'
+else
+  # DESKTOP
+  
+  aptinstall Boxes gnome-boxes
 fi
 
 # Apt installs
