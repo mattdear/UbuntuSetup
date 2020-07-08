@@ -47,11 +47,9 @@ snapinstall(){
 
 if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
   # LAPTOP
-
   snapinstall Deja Dup 'deja-dup --classic'
 else
   # DESKTOP
-  
   aptinstall Boxes gnome-boxes
 fi
 
