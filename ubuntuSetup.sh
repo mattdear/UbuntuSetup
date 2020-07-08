@@ -58,12 +58,12 @@ aptinstall Boxes gnome-boxes
 # Snap installs
 snapinstall Postman postman
 snapinstall DrawIO drawio
+snapinstall Netbeans 'netbeans --classic'
 
 # Manual installs
 echo "Manual installs"
 read -s -n 1 -p "Discord press [Enter] once complete..."
 read -s -n 1 -p "Libre Office press [Enter] once complete..."
-read -s -n 1 -p "Netbeans press [Enter] once complete..."
 
 # Script end
 echo "UbuntuSetup Complete"
