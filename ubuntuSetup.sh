@@ -23,18 +23,11 @@ snapinstall(){
   snap install $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
 
-# Custom apm install function
-apminstall(){
-  echo "Installing $1... \c"
-  apm install $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-}
-
 # Setting up Atom installer
 echo "Retrieving Atom GPG key... \c"
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 echo "Adding Atom to apt sources... \c"
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-#sudo apt-get update
 
 # Installing cURL
 aptinstall Curl curl
@@ -44,7 +37,6 @@ echo "Retrieving Spotify GPG key... \c"
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 echo "Adding Spotify to apt sources... \c"
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-#sudo apt-get update
 
 # Update start
 echo "Updating... \c"
@@ -84,12 +76,11 @@ snapinstall Netbeans 'netbeans --classic'
 snapinstall 'Libre Office' libreoffice
 snapinstall Discord discord
 
-# Atom package installs
-apminstall 'Latex for Atom' latex
-apminstall 'Language-Latex for Atom' language-latex
-
-# Manual installs
-echo "Manual install of TexLive required"
-
 # Script end
 echo "#--------------- UbuntuSetup Complete ---------------#"
+
+# Manual installs
+echo "Manually install"
+echo "TexLive"
+echo "Latex for Atom (apm install latex)"
+echo "Language-Latex for Atom (apm install language-latex)"
