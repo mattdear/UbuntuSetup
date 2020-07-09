@@ -86,7 +86,7 @@ apminstall Language-Latex language-latex
 
 # Manual installs
 echo "Manual installs"
-read -s -n 1 -p "TexLive press [Enter] once complete..."
+read -p "TexLive press [Enter] once complete..."
 
 # Script end
 echo "UbuntuSetup Complete"
