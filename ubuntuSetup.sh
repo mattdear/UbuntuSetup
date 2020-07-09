@@ -69,5 +69,13 @@ snapinstall Netbeans 'netbeans --classic'
 snapinstall 'Libre Office' libreoffice
 snapinstall Discord discord
 
+# Atom package installs
+apm install latex
+apm install language-latex
+
+# Manual installs
+echo "Manual installs"
+read -s -n 1 -p "TexLive press [Enter] once complete..."
+
 # Script end
 echo "UbuntuSetup Complete"
