@@ -23,6 +23,12 @@ snapinstall(){
   snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
 }
 
+# Custom apm install function
+apminstall(){
+  echo -e "Installing $1... \c"
+  apm install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
+}
+
 # Setting up Atom installer
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
@@ -75,8 +81,8 @@ snapinstall 'Libre Office' libreoffice
 snapinstall Discord discord
 
 # Atom package installs
-apm install latex
-apm install language-latex
+apminstall Latex latex
+apminstall Language-Latex language-latex
 
 # Manual installs
 echo "Manual installs"
