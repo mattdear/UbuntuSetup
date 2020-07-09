@@ -59,7 +59,7 @@ aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks' gnome-tweak-tool
 aptinstall Maven maven
 aptinstall 'Hunspell GB' hunspell-en-gb
-aptinstall Atom Atom
+aptinstall Atom atom
 aptinstall Spotify spotify-client
 
 # Snap installs
