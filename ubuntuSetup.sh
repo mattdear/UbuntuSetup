@@ -11,10 +11,25 @@ home=/home/$user
 # Script start
 echo "Running UbuntuSetup"
 
+# Custom apt install function
+aptinstall(){
+  echo -e "Installing $1... \c"
+  apt install -y $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
+}
+
+# Custom snap install function
+snapinstall(){
+  echo -e "Installing $1... \c"
+  snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
+}
+
 # Setting up Atom installer
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 sudo apt-get update
+
+# Installing cURL
+aptinstall Curl curl
 
 # Setting up Spotify installer
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
@@ -35,16 +50,6 @@ mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
 echo "Complete"
 
-aptinstall(){
-  echo -e "Installing $1... \c"
-  apt install -y $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-}
-
-snapinstall(){
-  echo -e "Installing $1... \c"
-  snap install $2 1>/dev/null && echo -e "Complete" || echo -e "Error"
-}
-
 if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
   # LAPTOP
   snapinstall Deja Dup 'deja-dup --classic'
@@ -58,7 +63,7 @@ aptinstall Vim vim
 aptinstall 'Java JDK & JRE' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks' gnome-tweak-tool
 aptinstall Maven maven
-aptinstall 'Hunspell GB' hunspell-en-gb
+aptinstall 'Hunspell en-GB' hunspell-en-gb
 aptinstall Atom atom
 aptinstall Spotify spotify-client
 
