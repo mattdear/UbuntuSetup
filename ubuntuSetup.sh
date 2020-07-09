@@ -67,10 +67,7 @@ snapinstall Postman postman
 snapinstall DrawIO drawio
 snapinstall Netbeans 'netbeans --classic'
 snapinstall 'Libre Office' libreoffice
-
-# Manual installs
-echo "Manual installs"
-read -s -n 1 -p "Discord press [Enter] once complete..."
+snapinstall Discord discord
 
 # Script end
 echo "UbuntuSetup Complete"
