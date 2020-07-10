@@ -25,12 +25,12 @@ snapinstall(){
 
 # Installing cURL
 echo " "
-echo "------------------------------- Installing cURL --------------------------------"
+echo "                                Installing cURL                                 "
 aptinstall 'Curl .......................................................' curl
 
 # Setting up Atom installer
 echo " "
-echo "--------------------------- Setting up apt sources -----------------------------"
+echo "                             Setting up apt sources                             "
 echo "Retrieving Atom GPG key ............................................... \c"
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 echo "Adding Atom to apt sources ............................................ \c"
@@ -44,7 +44,7 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 
 # Update start
 echo " "
-echo "------------------------------- Updating Ubuntu --------------------------------"
+echo "                                Updating Ubuntu                                 "
 echo "Updating .............................................................. \c"
 apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
@@ -68,7 +68,7 @@ fi
 
 # Apt installs
 echo " "
-echo "--------------------------------- Apt installs ---------------------------------"
+echo "                                  Apt installs                                  "
 aptinstall 'Vim ........................................................' vim
 aptinstall 'Java JDK & JRE .............................................' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
@@ -79,7 +79,7 @@ aptinstall 'Spotify ....................................................' spotif
 
 # Snap installs
 echo " "
-echo "-------------------------------- Snap installs ---------------------------------"
+echo "                                 Snap installs                                  "
 snapinstall 'Postman ....................................................' postman
 snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
@@ -88,7 +88,7 @@ snapinstall 'Discord ....................................................' disco
 
 # Manual installs
 echo " "
-echo "------------------------------- Manual installs --------------------------------"
+echo "                                Manual installs                                 "
 echo "Installing TexLive .................................................... \c"
 echo "Complete"
 echo "Open Atom ............................................................. \c"
