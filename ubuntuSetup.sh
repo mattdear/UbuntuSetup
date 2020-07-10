@@ -20,7 +20,7 @@ snapinstall(){
   snap install $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
 
-# Prompt user to continue
+# Prompt user to continue function
 promptcontinue(){
   echo "\n$1\c"
   stty -echo
@@ -29,7 +29,7 @@ promptcontinue(){
     read userinput
   done
   stty echo
-  echo 'complete'
+  echo 'Complete'
 }
 
 # Script start
@@ -55,13 +55,13 @@ curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 1>/
 echo "Adding Spotify to apt sources ......................................... \c"
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
-# Update start
+# Update Ubuntu
 echo " "
 echo "                          Initial Ubuntu configuration                          "
 echo "Updating .............................................................. \c"
 apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
-# Upgrade start
+# Upgrade Ubuntu
 echo "Upgrading ............................................................. \c"
 apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
@@ -71,7 +71,7 @@ mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
 echo "Complete"
 
-# Laptop and desktop specific installs
+# Device specific installs
 if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
   # Laptop
   echo " "
@@ -104,27 +104,21 @@ snapinstall 'Netbeans ...................................................' 'netb
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 
+# Atom package manager installs
+echo " "
+echo "                         Atom package manager installs                          "
+echo "                   Run the following commands in the terminal                   "
+promptcontinue "Open Atom ............................................................. \c"
+promptcontinue "Install Latex 'apm install latex' ..................................... \c"
+promptcontinue "Install Language-Latex 'apm install language-latex' ................... \c"
+
 # Manual installs
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Install TexLive from website........................................... \c"
-#read userInput
-#echo "Complete"
-
-echo " "
-echo "                         Atom package manager installs                          "
-echo "                   Run the following commands in the terminal                   "
-echo "Open Atom ............................................................. \c"
-read userInput
-echo "Complete"
-echo "Install Latex 'apm install latex' ..................................... \c"
-read userInput
-echo "Complete"
-echo "Install Language-Latex 'apm install language-latex' ................... \c"
-read userInput
-echo "Complete"
 
 # Script end
 echo " "
 echo "############################# UbuntuSetup complete #############################"
+echo " "
