@@ -31,7 +31,7 @@ aptinstall 'Curl .......................................................' curl
 
 # Setting up Atom installer
 echo " "
-echo "                             Setting up apt sources                             "
+echo "                            Configuring apt sources                             "
 echo "Retrieving Atom GPG key ............................................... \c"
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 echo "Adding Atom to apt sources ............................................ \c"
