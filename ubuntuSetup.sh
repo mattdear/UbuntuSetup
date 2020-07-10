@@ -22,7 +22,7 @@ snapinstall(){
 
 # Prompt user to continue function
 promptcontinue(){
-  echo "\n$1\c"
+  echo "$1\c"
   stty -echo
   userinput='this variable needs to contain something otherwise the following loop will immediately pass'
   while [ "$userinput" ]; do
