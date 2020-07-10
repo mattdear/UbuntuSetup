@@ -9,7 +9,7 @@ user=$SUDO_USER
 home=/home/$user
 
 # Script start
-echo " "
+clear
 echo "############################# Running UbuntuSetup ##############################"
 
 # Custom apt install function
@@ -99,10 +99,13 @@ echo "Installing TexLive .................................................... \c
 read userInput
 echo "Complete"
 echo "Open Atom ............................................................. \c"
+read userInput
 echo "Complete"
 echo "Installing Latex for Atom (apm install latex) ......................... \c"
+read userInput
 echo "Complete"
 echo "Installing Language-Latex for Atom (apm install language-latex) ....... \c"
+read userInput
 echo "Complete"
 
 # Script end
