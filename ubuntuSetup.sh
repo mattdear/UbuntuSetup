@@ -70,11 +70,11 @@ aptinstall 'Atom .......................................................' atom
 aptinstall 'Spotify ....................................................' spotify-client
 
 # Snap installs
-snapinstall 'Postman ...................................................' postman
-snapinstall 'DrawIO ....................................................' drawio
-snapinstall 'Netbeans ..................................................' 'netbeans --classic'
-snapinstall 'Libre Office ..............................................' libreoffice
-snapinstall 'Discord ...................................................' discord
+snapinstall 'Postman ....................................................' postman
+snapinstall 'DrawIO .....................................................' drawio
+snapinstall 'Netbeans ...................................................' 'netbeans --classic'
+snapinstall 'Libre Office ...............................................' libreoffice
+snapinstall 'Discord ....................................................' discord
 
 # Manual installs
 echo "Manual installs ....................................................... \c"
@@ -86,6 +86,7 @@ echo "Complete"
 echo "Installing Latex for Atom (apm install latex) ......................... \c"
 echo "Complete"
 echo "Installing Language-Latex for Atom (apm install language-latex) ....... \c"
+echo "Complete"
 
 # Script end
 echo "############################# UbuntuSetup Complete #############################"
