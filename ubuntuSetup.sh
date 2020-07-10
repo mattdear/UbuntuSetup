@@ -9,6 +9,7 @@ user=$SUDO_USER
 home=/home/$user
 
 # Script start
+echo " "
 echo "############################# Running UbuntuSetup ##############################"
 
 # Custom apt install function
