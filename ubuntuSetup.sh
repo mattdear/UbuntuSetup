@@ -8,10 +8,6 @@ user=$SUDO_USER
 [ -z $user ] && read -p 'What user is running this script? ' user
 home=/home/$user
 
-# Script start
-clear
-echo "############################# Running UbuntuSetup ##############################"
-
 # Custom apt install function
 aptinstall(){
   echo "Installing $1 \c"
@@ -23,6 +19,22 @@ snapinstall(){
   echo "Installing $1 \c"
   snap install $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
+
+# Prompt user to continue
+promptcontinue(){
+  echo "\n$1\c"
+  stty -echo
+  userinput='this variable needs to contain something otherwise the following loop will immediately pass'
+  while [ "$userinput" ]; do
+    read userinput
+  done
+  stty echo
+  echo 'complete'
+}
+
+# Script start
+clear
+echo "############################# Running UbuntuSetup ##############################"
 
 # Installing cURL
 echo " "
