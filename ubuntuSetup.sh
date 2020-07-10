@@ -108,9 +108,9 @@ snapinstall 'Discord ....................................................' disco
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
-echo "Install TexLive from website........................................... \c"
-read userInput
-echo "Complete"
+promptcontinue "Install TexLive from website........................................... \c"
+#read userInput
+#echo "Complete"
 
 echo " "
 echo "                         Atom package manager installs                          "
