@@ -61,11 +61,13 @@ echo "Complete"
 
 # Laptop and desktop specific installs
 if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
-  # LAPTOP
+  # Laptop
+  echo " "
   echo "                              Laptop snap installs                              "
   snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
 else
-  # DESKTOP
+  # Desktop
+  echo " "
   echo "                              Desktop apt installs                              "
   aptinstall 'Boxes ......................................................' gnome-boxes
 fi
