@@ -23,22 +23,20 @@ snapinstall(){
   snap install $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
 
-# Setting up Atom installer
-echo " "
-echo "-------------------------- Setting up Atom installer ---------------------------"
-echo "Retrieving Atom GPG key ............................................... \c"
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-echo "Adding Atom to apt sources ............................................ \c"
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-
 # Installing cURL
 echo " "
 echo "------------------------------- Installing cURL --------------------------------"
 aptinstall 'Curl .......................................................' curl
 
-# Setting up Spotify installer
+# Setting up Atom installer
 echo " "
-echo "------------------------- Setting up Spotify installer -------------------------"
+echo "--------------------------- Setting up apt sources -----------------------------"
+echo "Retrieving Atom GPG key ............................................... \c"
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
+echo "Adding Atom to apt sources ............................................ \c"
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
+
+# Setting up Spotify installer
 echo "Retrieving Spotify GPG key ............................................ \c"
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 echo "Adding Spotify to apt sources ......................................... \c"
