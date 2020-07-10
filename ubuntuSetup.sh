@@ -96,16 +96,17 @@ snapinstall 'Discord ....................................................' disco
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
-echo "Installing TexLive .................................................... \c"
+echo "Install TexLive from website........................................... \c"
 read userInput
 echo "Complete"
-echo "Open Atom ............................................................. \c"
+echo "Opening Atom .......................................................... \c"
+atom
 read userInput
 echo "Complete"
-echo "Installing Latex for Atom (apm install latex) ......................... \c"
+echo "Install Latex for Atom using apm install latex ........................ \c"
 read userInput
 echo "Complete"
-echo "Installing Language-Latex for Atom (apm install language-latex) ....... \c"
+echo "Install Language-Latex for Atom using apm install language-latex ...... \c"
 read userInput
 echo "Complete"
 
