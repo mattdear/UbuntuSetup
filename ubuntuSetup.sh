@@ -9,7 +9,7 @@ user=$SUDO_USER
 home=/home/$user
 
 # Script start
-echo "############################ Running UbuntuSetup ##############################"
+echo "############################# Running UbuntuSetup ##############################"
 
 # Custom apt install function
 aptinstall(){
@@ -26,11 +26,11 @@ snapinstall(){
 # Setting up Atom installer
 echo "Retrieving Atom GPG key................................................ \c"
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-echo "Adding Atom to apt sources... \c"
+echo "Adding Atom to apt sources............................................. \c"
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 # Installing cURL
-aptinstall Curl curl
+aptinstall Curl........................................................ curl
 
 # Setting up Spotify installer
 echo "Retrieving Spotify GPG key............................................. \c"
@@ -77,7 +77,7 @@ snapinstall 'Libre Office' libreoffice
 snapinstall Discord discord
 
 # Script end
-echo "############################ UbuntuSetup Complete #############################"
+echo "############################# UbuntuSetup Complete #############################"
 
 # Manual installs
 echo "Manual installs"
