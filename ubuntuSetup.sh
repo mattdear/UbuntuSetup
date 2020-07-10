@@ -24,6 +24,18 @@ snapinstall(){
   snap install $2 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 }
 
+# Prompt user to continue
+promptcontinue(){
+  echo "\n$1\c"
+  stty -echo
+  userinput='this variable needs to contain something otherwise the following loop will immediately pass'
+  while [ "$userinput" ]; do
+    read userinput
+  done
+  stty echo
+  echo 'complete'
+}
+
 # Installing cURL
 echo " "
 echo "                                Installing cURL                                 "
@@ -96,18 +108,10 @@ snapinstall 'Discord ....................................................' disco
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
-echo "Installing TexLive .................................................... \c"
-read userInput
-echo "Complete"
-echo "Open Atom ............................................................. \c"
-read userInput
-echo "Complete"
-echo "Installing Latex for Atom (apm install latex) ......................... \c"
-read userInput
-echo "Complete"
-echo "Installing Language-Latex for Atom (apm install language-latex) ....... \c"
-read userInput
-echo "Complete"
+promptcontinue 'Installing TexLive ....................................................'
+promptcontinue 'Open Atom .............................................................'
+promptcontinue 'Installing Latex for Atom (apm install latex) .........................'
+promptcontinue 'Installing Language-Latex for Atom (apm install language-latex) .......'
 
 # Script end
 echo " "
