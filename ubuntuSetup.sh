@@ -45,7 +45,7 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 
 # Update start
 echo " "
-echo "                                Updating Ubuntu                                 "
+echo "                             Initial Ubuntu config                              "
 echo "Updating .............................................................. \c"
 apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
@@ -59,11 +59,14 @@ mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
 echo "Complete"
 
+# Laptop and desktop specific installs
 if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
   # LAPTOP
+  echo "                              Laptop snap installs                              "
   snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
 else
   # DESKTOP
+  echo "                              Desktop apt installs                              "
   aptinstall 'Boxes ......................................................' gnome-boxes
 fi
 
@@ -100,5 +103,5 @@ echo "Installing Language-Latex for Atom (apm install language-latex) ....... \c
 echo "Complete"
 
 # Script end
-echo "############################# UbuntuSetup complete #############################"
 echo " "
+echo "############################# UbuntuSetup complete #############################"
