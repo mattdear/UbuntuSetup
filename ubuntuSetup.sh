@@ -45,7 +45,7 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 
 # Update start
 echo " "
-echo "                             Initial Ubuntu config                              "
+echo "                          Initial Ubuntu configuration                          "
 echo "Updating .............................................................. \c"
 apt update 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
@@ -106,10 +106,10 @@ echo "                   Run the following commands in the terminal             
 echo "Open Atom ............................................................. \c"
 read userInput
 echo "Complete"
-echo "Install Latex for Atom using apm install latex ........................ \c"
+echo "Install Latex 'apm install latex' ..................................... \c"
 read userInput
 echo "Complete"
-echo "Install Language-Latex for Atom using apm install language-latex ...... \c"
+echo "Install Language-Latex 'apm install language-latex' ................... \c"
 read userInput
 echo "Complete"
 
