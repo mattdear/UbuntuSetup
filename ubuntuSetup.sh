@@ -99,8 +99,11 @@ echo "                      Press [Enter] after each to continue                
 echo "Install TexLive from website........................................... \c"
 read userInput
 echo "Complete"
-echo "Opening Atom .......................................................... \c"
-atom
+
+echo " "
+echo "                         Atom package manager installs                          "
+echo "                   Run the following commands in the terminal                   "
+echo "Open Atom ............................................................. \c"
 read userInput
 echo "Complete"
 echo "Install Latex for Atom using apm install latex ........................ \c"
