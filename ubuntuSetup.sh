@@ -96,6 +96,7 @@ snapinstall 'Discord ....................................................' disco
 echo " "
 echo "                                Manual installs                                 "
 echo "Installing TexLive .................................................... \c"
+read userInput
 echo "Complete"
 echo "Open Atom ............................................................. \c"
 echo "Complete"
