@@ -30,7 +30,7 @@ echo "Adding Atom to apt sources ............................................ \c
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 # Installing cURL
-aptinstall Curl ....................................................... curl
+aptinstall 'Curl .......................................................' curl
 
 # Setting up Spotify installer
 echo "Retrieving Spotify GPG key ............................................ \c"
@@ -54,27 +54,27 @@ echo "Complete"
 
 if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
   # LAPTOP
-  snapinstall Deja Dup .................................................. 'deja-dup --classic'
+  snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
 else
   # DESKTOP
-  aptinstall Boxes ...................................................... gnome-boxes
+  aptinstall 'Boxes ......................................................' gnome-boxes
 fi
 
 # Apt installs
-aptinstall Vim ........................................................ vim
+aptinstall 'Vim ........................................................' vim
 aptinstall 'Java JDK & JRE .............................................' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
-aptinstall Maven ...................................................... maven
+aptinstall 'Maven ......................................................' maven
 aptinstall 'Hunspell en-GB .............................................' hunspell-en-gb
-aptinstall Atom ....................................................... atom
-aptinstall Spotify .................................................... spotify-client
+aptinstall 'Atom .......................................................' atom
+aptinstall 'Spotify ....................................................' spotify-client
 
 # Snap installs
-snapinstall Postman ................................................... postman
-snapinstall DrawIO .................................................... drawio
-snapinstall Netbeans .................................................. 'netbeans --classic'
+snapinstall 'Postman ...................................................' postman
+snapinstall 'DrawIO ....................................................' drawio
+snapinstall 'Netbeans ..................................................' 'netbeans --classic'
 snapinstall 'Libre Office ..............................................' libreoffice
-snapinstall Discord ................................................... discord
+snapinstall 'Discord ...................................................' discord
 
 # Script end
 echo "############################# UbuntuSetup Complete #############################"
