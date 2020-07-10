@@ -76,11 +76,16 @@ snapinstall 'Netbeans ..................................................' 'netbe
 snapinstall 'Libre Office ..............................................' libreoffice
 snapinstall 'Discord ...................................................' discord
 
+# Manual installs
+echo "Manual installs ....................................................... \c"
+echo "Complete"
+echo "Installing TexLive .................................................... \c"
+echo "Complete"
+echo "Open Atom ............................................................. \c"
+echo "Complete"
+echo "Installing Latex for Atom (apm install latex) ......................... \c"
+echo "Complete"
+echo "Installing Language-Latex for Atom (apm install language-latex) ....... \c"
+
 # Script end
 echo "############################# UbuntuSetup Complete #############################"
-
-# Manual installs
-echo "Manual installs"
-echo "TexLive"
-echo "Latex for Atom (apm install latex)"
-echo "Language-Latex for Atom (apm install language-latex)"
