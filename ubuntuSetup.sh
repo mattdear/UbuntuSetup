@@ -46,13 +46,13 @@ echo " "
 echo "                       Configuring additional apt sources                       "
 echo "Retrieving Atom GPG key ............................................... \c"
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-echo "Adding Atom to apt sources ............................................ \c"
+echo "Adding Atom to sources ................................................ \c"
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 # Setting up Spotify installer
 echo "Retrieving Spotify GPG key ............................................ \c"
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-echo "Adding Spotify to apt sources ......................................... \c"
+echo "Adding Spotify to sources ............................................. \c"
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 # Update Ubuntu
@@ -66,7 +66,7 @@ echo "Upgrading ............................................................. \c
 apt upgrade -y 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
 
 # Configure aliases
-echo "Configuring Aliases ................................................... \c"
+echo "Configuring aliases ................................................... \c"
 mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
 echo "Complete"
