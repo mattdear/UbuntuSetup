@@ -107,8 +107,8 @@ snapinstall 'Discord ....................................................' disco
 # Atom package manager installs
 echo " "
 echo "                         Atom package manager installs                          "
-echo "                   Run the following commands in the terminal                   "
-promptcontinue "Open Atom ............................................................. \c"
+echo "     Open Atom and then run the following install commands in the terminal      "
+echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Install Latex 'apm install latex' ..................................... \c"
 promptcontinue "Install Language-Latex 'apm install language-latex' ................... \c"
 
@@ -121,4 +121,3 @@ promptcontinue "Install TexLive from website....................................
 # Script end
 echo " "
 echo "############################# UbuntuSetup complete #############################"
-echo " "
