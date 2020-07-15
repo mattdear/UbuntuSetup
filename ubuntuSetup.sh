@@ -92,7 +92,7 @@ aptinstall 'Java JDK & JRE .............................................' openjd
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
 aptinstall 'Maven ......................................................' maven
 aptinstall 'Hunspell en-GB .............................................' hunspell-en-gb
-aptinstall 'Atom .......................................................' atom
+# aptinstall 'Atom .......................................................' atom
 aptinstall 'Spotify ....................................................' spotify-client
 
 # Snap installs
@@ -103,20 +103,27 @@ snapinstall 'DrawIO .....................................................' drawi
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
+snapinstall 'Visual Studio Code .........................................' code
 
 # Atom package manager installs
-echo " "
-echo "                         Atom package manager installs                          "
-echo "               Open Atom and run these commands in the terminal                 "
-echo "                      Press [Enter] after each to continue                      "
-promptcontinue "Install Latex 'apm install latex' ..................................... \c"
-promptcontinue "Install Language-Latex 'apm install language-latex' ................... \c"
+# echo " "
+# echo "                         Atom package manager installs                          "
+# echo "               Open Atom and run these commands in the terminal                 "
+# echo "                      Press [Enter] after each to continue                      "
+# promptcontinue "Install Latex 'apm install latex' ..................................... \c"
+# promptcontinue "Install Language-Latex 'apm install language-latex' ................... \c"
 
-# Manual installs
+# # Manual installs
+# echo " "
+# echo "                                Manual installs                                 "
+# echo "                      Press [Enter] after each to continue                      "
+# promptcontinue "Install TexLive ....................................................... \c"
+
+# VSCode installs
 echo " "
-echo "                                Manual installs                                 "
+echo "                                VSCode installs                                 "
 echo "                      Press [Enter] after each to continue                      "
-promptcontinue "Install TexLive ....................................................... \c"
+promptcontinue "Install LaTeX Workshop ................................................ \c"
 
 # Script end
 echo " "
