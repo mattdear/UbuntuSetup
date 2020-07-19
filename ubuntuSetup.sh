@@ -92,8 +92,9 @@ aptinstall 'Java JDK & JRE .............................................' openjd
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
 aptinstall 'Maven ......................................................' maven
 aptinstall 'Hunspell en-GB .............................................' hunspell-en-gb
-# aptinstall 'Atom .......................................................' atom
 aptinstall 'Spotify ....................................................' spotify-client
+aptinstall 'TexLive ....................................................' texlive
+aptinstall 'LaTeXmk ....................................................' latexmk
 
 # Snap installs
 echo " "
@@ -104,20 +105,6 @@ snapinstall 'Netbeans ...................................................' 'netb
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Visual Studio Code .........................................' code
-
-# Atom package manager installs
-# echo " "
-# echo "                         Atom package manager installs                          "
-# echo "               Open Atom and run these commands in the terminal                 "
-# echo "                      Press [Enter] after each to continue                      "
-# promptcontinue "Install Latex 'apm install latex' ..................................... \c"
-# promptcontinue "Install Language-Latex 'apm install language-latex' ................... \c"
-
-# # Manual installs
-# echo " "
-# echo "                                Manual installs                                 "
-# echo "                      Press [Enter] after each to continue                      "
-# promptcontinue "Install TexLive ....................................................... \c"
 
 # VSCode installs
 echo " "
