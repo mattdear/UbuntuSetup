@@ -65,26 +65,26 @@ aptinstall 'LaTeXmk ....................................................' latexm
 # Snap installs
 echo " "
 echo "                                 Snap installs                                  "
-snapinstall 'Postman ....................................................' postman
 snapinstall 'Deja Dup ...................................................' 'deja-dup --classic'
-snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
+snapinstall 'Visual Studio Code .........................................' 'code --classic'
+snapinstall 'Postman ....................................................' postman
+snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
-
-# Manual installs
-echo " "
-echo "                                Manual installs                                 "
-echo "                      Press [Enter] after each to continue                      "
-promptcontinue "Virtual Box (from website)............................................. \c"
-promptcontinue "Visual Studio Code (sudo snap insall code --classic)................... \c"
 
 # VSCode installs
 echo " "
 echo "                                VSCode installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Install LaTeX Workshop ................................................ \c"
+
+# Manual installs
+echo " "
+echo "                                Manual installs                                 "
+echo "                      Press [Enter] after each to continue                      "
+promptcontinue "Virtual Box (from website)............................................. \c"
 
 # Script end
 echo " "
