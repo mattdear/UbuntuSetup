@@ -78,13 +78,13 @@ aptinstall 'LaTeXmk ....................................................' latexm
 # Snap installs
 echo " "
 echo "                                 Snap installs                                  "
+snapinstall 'Visual Studio Code .........................................' code --classic
 snapinstall 'Postman ....................................................' postman
 snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
-snapinstall 'Visual Studio Code .........................................' code --classic
 
 # VSCode installs
 echo " "
