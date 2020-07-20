@@ -84,7 +84,7 @@ promptcontinue "Install LaTeX Workshop .........................................
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
-promptcontinue "Virtual Box (from website)............................................. \c"
+promptcontinue "Virtual Box ........................................................... \c"
 
 # Script end
 echo " "
