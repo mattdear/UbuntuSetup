@@ -36,25 +36,6 @@ promptcontinue(){
 clear
 echo "############################# Running UbuntuSetup ##############################"
 
-# Installing cURL
-echo " "
-echo "                                Installing cURL                                 "
-aptinstall 'Curl .......................................................' curl
-
-# Setting up Atom installer
-echo " "
-echo "                       Configuring additional apt sources                       "
-echo "Retrieving Atom GPG key ............................................... \c"
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-echo "Adding Atom to sources ................................................ \c"
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-
-# Setting up Spotify installer
-echo "Retrieving Spotify GPG key ............................................ \c"
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-echo "Adding Spotify to sources ............................................. \c"
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list 1>/dev/null 2>/tmp/stderr && echo 'Complete' || echo -e 'Error: \c' && cat /tmp/stderr | egrep '^E: ' | sed 's/^E: //'
-
 # Update Ubuntu
 echo " "
 echo "                          Initial Ubuntu configuration                          "
@@ -104,6 +85,7 @@ snapinstall 'DrawIO .....................................................' drawi
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
+snapinstall 'Spotify ....................................................' spotify
 snapinstall 'Visual Studio Code .........................................' code
 
 # VSCode installs
