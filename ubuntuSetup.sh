@@ -52,18 +52,6 @@ mv .bash_aliases $home
 chown $user:$user $home/.bash_aliases
 echo "Complete"
 
-# Device specific installs
-if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
-  # Laptop
-  echo " "
-  echo "                              Laptop snap installs                              "
-  snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
-else
-  # Desktop
-  #echo " "
-  #echo "                              Desktop apt installs                              "
-fi
-
 # Apt installs
 echo " "
 echo "                                  Apt installs                                  "
@@ -79,6 +67,7 @@ echo " "
 echo "                                 Snap installs                                  "
 snapinstall 'Visual Studio Code .........................................' code --classic
 snapinstall 'Postman ....................................................' postman
+snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
 snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 snapinstall 'Libre Office ...............................................' libreoffice
