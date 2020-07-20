@@ -60,9 +60,8 @@ if [ $(ls '/sys/class/power_supply/' 2>/dev/null) ] ; then
   snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
 else
   # Desktop
-  echo " "
-  echo "                              Desktop apt installs                              "
-  aptinstall 'Boxes ......................................................' gnome-boxes
+  #echo " "
+  #echo "                              Desktop apt installs                              "
 fi
 
 # Apt installs
@@ -85,6 +84,13 @@ snapinstall 'Netbeans ...................................................' 'netb
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
+
+# Manual installs
+echo " "
+echo "                                Manual installs                                 "
+echo "                      Press [Enter] after each to continue                      "
+promptcontinue "Virtual Box (from website)............................................. \c"
+#promptcontinue "Visual Studio Code (sudo snap insall code --classic)................... \c"
 
 # VSCode installs
 echo " "
