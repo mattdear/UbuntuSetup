@@ -65,9 +65,8 @@ aptinstall 'LaTeXmk ....................................................' latexm
 # Snap installs
 echo " "
 echo "                                 Snap installs                                  "
-snapinstall 'Visual Studio Code .........................................' code --classic
 snapinstall 'Postman ....................................................' postman
-snapinstall 'Deja Dup ..................................................' 'deja-dup --classic'
+snapinstall 'Deja Dup ...................................................' 'deja-dup --classic'
 snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 snapinstall 'Libre Office ...............................................' libreoffice
@@ -79,7 +78,7 @@ echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Virtual Box (from website)............................................. \c"
-#promptcontinue "Visual Studio Code (sudo snap insall code --classic)................... \c"
+promptcontinue "Visual Studio Code (sudo snap insall code --classic)................... \c"
 
 # VSCode installs
 echo " "
