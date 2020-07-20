@@ -72,8 +72,6 @@ aptinstall 'Vim ........................................................' vim
 aptinstall 'Java JDK & JRE .............................................' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
 aptinstall 'Maven ......................................................' maven
-aptinstall 'Hunspell en-GB .............................................' hunspell-en-gb
-aptinstall 'Spotify ....................................................' spotify-client
 aptinstall 'TexLive ....................................................' texlive
 aptinstall 'LaTeXmk ....................................................' latexmk
 
@@ -86,7 +84,7 @@ snapinstall 'Netbeans ...................................................' 'netb
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
-snapinstall 'Visual Studio Code .........................................' code
+snapinstall 'Visual Studio Code .........................................' code --classic
 
 # VSCode installs
 echo " "
