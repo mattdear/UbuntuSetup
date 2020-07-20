@@ -87,6 +87,7 @@ echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Virtual Box ........................................................... \c"
+promptcontinue "Zotero ................................................................ \c"
 
 # Script end
 echo " "
