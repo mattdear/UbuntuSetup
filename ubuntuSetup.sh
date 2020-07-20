@@ -79,6 +79,8 @@ echo " "
 echo "                                VSCode installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Install LaTeX Workshop ................................................ \c"
+promptcontinue "Install Code Spell Checker ............................................ \c"
+
 
 # Manual installs
 echo " "
