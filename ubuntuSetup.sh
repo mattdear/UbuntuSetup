@@ -84,7 +84,10 @@ promptcontinue "Install Code Spell Checker .....................................
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
+promptcontinue "Google Chrome ......................................................... \c"
 promptcontinue "Virtual Box ........................................................... \c"
+promptcontinue "VirtualBox Extension Pack ............................................. \c"
+promptcontinue "MiKTeX ................................................................ \c"
 promptcontinue "Zotero ................................................................ \c"
 
 # Script end
