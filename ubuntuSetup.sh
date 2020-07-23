@@ -64,14 +64,14 @@ aptinstall 'Git ........................................................' git
 # Snap installs
 echo " "
 echo "                                 Snap installs                                  "
-snapinstall 'Deja Dup ...................................................' 'deja-dup --classic'
-snapinstall 'Netbeans ...................................................' 'netbeans --classic'
-snapinstall 'Visual Studio Code .........................................' 'code --classic'
 snapinstall 'Postman ....................................................' postman
 snapinstall 'DrawIO .....................................................' drawio
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
+snapinstall 'Deja Dup ...................................................' 'deja-dup --classic'
+snapinstall 'Visual Studio Code .........................................' 'code --classic'
+snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 
 # VSCode installs
 echo " "
@@ -79,7 +79,6 @@ echo "                                VSCode installs                           
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Install LaTeX Workshop ................................................ \c"
 promptcontinue "Install Code Spell Checker ............................................ \c"
-
 
 # Manual installs
 echo " "
