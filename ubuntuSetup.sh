@@ -59,7 +59,7 @@ aptinstall 'Vim ........................................................' vim
 aptinstall 'Java JDK & JRE .............................................' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
 aptinstall 'Maven ......................................................' maven
-aptinstall 'LaTeXmk ....................................................' latexmk
+#aptinstall 'LaTeXmk ....................................................' latexmk
 
 # Snap installs
 echo " "
@@ -85,7 +85,7 @@ promptcontinue "Install Code Spell Checker .....................................
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
-promptcontinue "Tex Live .............................................................. \c"
+#promptcontinue "Tex Live .............................................................. \c"
 promptcontinue "Virtual Box ........................................................... \c"
 promptcontinue "Zotero ................................................................ \c"
 
