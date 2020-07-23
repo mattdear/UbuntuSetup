@@ -59,6 +59,7 @@ aptinstall 'Vim ........................................................' vim
 aptinstall 'Java JDK & JRE .............................................' openjdk-8-jre-headless
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
 aptinstall 'Maven ......................................................' maven
+aptinstall 'Git ........................................................' git
 
 # Snap installs
 echo " "
