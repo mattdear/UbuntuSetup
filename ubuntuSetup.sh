@@ -71,6 +71,7 @@ snapinstall 'Discord ....................................................' disco
 snapinstall 'Spotify ....................................................' spotify
 snapinstall 'Deja Dup ...................................................' 'deja-dup --classic'
 snapinstall 'Visual Studio Code .........................................' 'code --classic'
+snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 
 # VSCode installs
 echo " "
@@ -86,7 +87,6 @@ echo "                      Press [Enter] after each to continue                
 promptcontinue "Google Chrome ......................................................... \c"
 promptcontinue "Virtual Box ........................................................... \c"
 promptcontinue "VirtualBox Extension Pack ............................................. \c"
-promptcontinue "Netbeans .............................................................. \c"
 promptcontinue "MiKTeX ................................................................ \c"
 promptcontinue "Zotero ................................................................ \c"
 
