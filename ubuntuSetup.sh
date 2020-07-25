@@ -69,7 +69,6 @@ snapinstall 'DrawIO .....................................................' drawi
 snapinstall 'Libre Office ...............................................' libreoffice
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
-snapinstall 'Deja Dup ...................................................' 'deja-dup --classic'
 snapinstall 'Visual Studio Code .........................................' 'code --classic'
 snapinstall 'Netbeans ...................................................' 'netbeans --classic'
 
@@ -85,8 +84,6 @@ echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Google Chrome ......................................................... \c"
-promptcontinue "Virtual Box ........................................................... \c"
-promptcontinue "VirtualBox Extension Pack ............................................. \c"
 promptcontinue "MiKTeX ................................................................ \c"
 promptcontinue "Zotero ................................................................ \c"
 
