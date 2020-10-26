@@ -56,7 +56,7 @@ echo "Complete"
 echo " "
 echo "                                  Apt installs                                  "
 aptinstall 'Vim ........................................................' vim
-aptinstall 'Java JDK & JRE .............................................' openjdk-8-jre-headless
+aptinstall 'Java JDK & JRE .............................................' openjdk-11-jdk
 aptinstall 'Gnome Tweaks ...............................................' gnome-tweak-tool
 aptinstall 'Maven ......................................................' maven
 aptinstall 'Git ........................................................' git
