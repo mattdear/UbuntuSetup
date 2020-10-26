@@ -70,7 +70,7 @@ snapinstall 'Libre Office ...............................................' libre
 snapinstall 'Discord ....................................................' discord
 snapinstall 'Spotify ....................................................' spotify
 snapinstall 'Visual Studio Code .........................................' 'code --classic'
-snapinstall 'Netbeans ...................................................' 'netbeans --classic'
+snapinstall 'Pycharm Pro ................................................' 'pycharm-professional --classic'
 
 # VSCode installs
 echo " "
@@ -78,13 +78,24 @@ echo "                                VSCode installs                           
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Install LaTeX Workshop ................................................ \c"
 promptcontinue "Install Code Spell Checker ............................................ \c"
+promptcontinue "Install Live Share .................................................... \c"
+promptcontinue "Install Markdown PDF .................................................. \c"
 
 # Manual installs
 echo " "
 echo "                                Manual installs                                 "
 echo "                      Press [Enter] after each to continue                      "
 promptcontinue "Google Chrome ......................................................... \c"
+promptcontinue "Teams ................................................................. \c"
+promptcontinue "Zoom .................................................................. \c"
+promptcontinue "Signal ................................................................ \c"
+promptcontinue "Python ................................................................ \c"
+promptcontinue "Virtual Box ........................................................... \c"
+promptcontinue "Cherrytree Notes ...................................................... \c"
+promptcontinue "Mattermost ............................................................ \c"
+promptcontinue "Docker ................................................................ \c"
 promptcontinue "MiKTeX ................................................................ \c"
+promptcontinue "IntelliJ IDEA ......................................................... \c"
 promptcontinue "Zotero ................................................................ \c"
 
 # Script end
