@@ -71,6 +71,7 @@ snapinstall 'Discord ....................................................' disco
 snapinstall 'Spotify ....................................................' spotify
 snapinstall 'Visual Studio Code .........................................' 'code --classic'
 snapinstall 'Pycharm Pro ................................................' 'pycharm-professional --classic'
+snapinstall 'IntelliJ Idea ..............................................' 'intellij-idea-ultimate --classic'
 
 # VSCode installs
 echo " "
@@ -95,7 +96,6 @@ promptcontinue "Cherrytree Notes ...............................................
 promptcontinue "Mattermost ............................................................ \c"
 promptcontinue "Docker ................................................................ \c"
 promptcontinue "MiKTeX ................................................................ \c"
-promptcontinue "IntelliJ IDEA ......................................................... \c"
 promptcontinue "Zotero ................................................................ \c"
 
 # Script end
